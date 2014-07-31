@@ -21,7 +21,7 @@ file="$1";
 pattern="$2";
 email="$3";
 
-md5er=$(which md5 || which md5sum);
+md5er=$(exec 2>&-;which md5 || which md5sum);
 
 if [[ ! -f "$file" ]]; then
   echo "Invalid File...";
